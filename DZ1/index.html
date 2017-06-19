@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="text" id="numA" oninput="this.value = this.value.replace (/[^\d.]/g, '').replace (/^0+/, '')">
+    <select id="act">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input type="text" id="numB" oninput="this.value = this.value.replace (/[^\d.]/g, '').replace (/^0+/, '')">
+    <input type="button" id="count" value="=" style="background-color: #00afea">
+    <span id="res"></span>
+</div>
+
+
+
+</body>
+</html>

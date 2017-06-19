@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function Animal(age) {
+            this.age = age;
+//            this.food = [12, 121];
+        }
+        Animal.prototype.food = [];
+
+       Animal.prototype.eat = function (food) {
+           this.food.push(food);
+       }
+
+
+        Animal.prototype.getVoice = function () {
+            return ' ... ';
+        }
+        
+        function Cat(age, sex, color) {
+           Animal.call(this.age);
+
+            this.sex = sex;
+            this.color = color;
+//
+        }
+
+        Cat.prototype = Object.create(Animal.prototype);
+        Cat.prototype.constructor = Cat;
+        Cat.prototype.getVoice = function () {
+            return 'meow-meow';
+        }
+
+//        Cat.prototype.onTailPress = function () {
+//            return this.name + ' meows and run.';
+//        }
+
+        function Dog(age, name) {
+            Animal.call(this.age);
+
+            this.name = name;
+//
+        }
+
+        Dog.prototype = Object.create(Animal.prototype);
+        Dog.prototype.constructor = Dog;
+//        Dog.prototype.getVoice = function () {
+//            return 'woof';
+//        }
+        
+        window.onload = function () {
+
+            var Murzik = new Cat(6, 'male', 'red');
+            var Bobik = new Dog(6, 'bobik');
+
+            Murzik.eat('qweqw');
+            Murzik.eat('dog');
+            Bobik.eat('sausage');
+
+//            console.log('Мурзик съел: ' + Murzik.food.join(', '));
+            console.log(Murzik);
+            console.log(Bobik);
+//           console.log(murzik.onTailPress());
+        }
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

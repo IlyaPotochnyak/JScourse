@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.onload = function () {
+//            console.log(window.document.body.children[0].innerHTML);
+//            console.log(document.getElementById('second').innerHTML)
+//            console.log(document.getElementsByClassName('spanB')[0].innerHTML);
+
+
+//            var input = document.getElementById('test');
+//            input.onclick = function () {
+//                var style = document.getElementById('s2').style;
+//                style.fontSize = '40px';
+//                style.color = 'red';
+//                style.position = 'absolute';
+//                style.left = '500px';
+//                input.value = 'Done';
+//
+//            }
+
+            var time = $('s2');
+            var steps = 50;
+
+            var anTime = 4000;
+            var reduction = 2000;
+
+           var opacity = +(time.style.opacity.replace(/\D+/g, ''));
+            console.log(opacity);
+
+            var timer = setInterval(function () {
+                opacity += 0.01;
+                time.style.opacity = opacity ;
+//                console.log(opacity)
+                },
+                10
+            );
+
+            setTimeout(function() {
+                clearInterval(timer);
+
+            }, 2000);
+
+
+
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+
+
+
+
+    </script>
+
+    <style>
+        #s1
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="first">
+    Привет!!!
+    <span id="s1" class="spanA">One</span>
+    <input id="test" type="button" value="move">
+    <span id="s2" class="spanB" style="opacity: 0">Two</span>
+</div>
+<div id="second">
+    JavaScript
+    <span id="s3" class="spanA">Three</span>
+    <span id="s4" class="spanB">Four</span>
+
+</div>
+
+
+
+</body>
+</html>
