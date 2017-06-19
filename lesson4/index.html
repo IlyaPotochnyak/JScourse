@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson4</title>
+    <script type="text/javascript" src="../jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="lesson4.js"></script>
+</head>
+<body>
+
+<div id="text">
+
+    <span class="span" id="sp1">Hello</span>  <span class="span" id="sp2">world!</span>
+
+</div>
+
+<div id="text2">
+    <span class="span" id="2sp1">2Hello</span>  <span class="span" id="2sp2">2world!</span>
+</div>
+
+<p id="paragraf">
+    Hello paragraf
+</p>
+
+<p id="paragraf2">
+    Hello paragraf2
+</p>
+
+
+<script>
+    $(document).ready(function () {
+//        var elem = $('div#text');
+//        changeColor(elem, 'red');
+//
+//        var elem1 = $('div#text2 span#2sp2');
+//        changeColor(elem1, 'blue');
+//
+//        var elem2 = $('p')
+//        changeColor(elem2, 'green');
+//
+//        var elem3 = $('.span', '#text2');
+//
+//        changeColor(elem3, 'yellow');
+
+//        var elem4 = $('div').css('font-size', '40px').find('span');
+//        changeColor(elem4, 'red');
+        var elem5 = $('div, p');
+        changeColor(elem5, 'blue');
+
+//        console.log(document.querySelectorAll('div'));
+//
+//
+//        console.log(elem);
+//        console.log(elem1);
+//        console.log(elem2);
+    })
+</script>
+</body>
+</html>
