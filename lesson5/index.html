@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.2.1.js"></script>
+    <script>
+
+        var newDiv = $('<div style="color: red">Hello</div>')
+
+
+
+        $(document).ready (function () {
+            $('span').mouseenter(function () {
+                $(this).css('border', '2px solid red');})
+
+            $('span').mouseleave(function () {
+                $(this).css('border', 'none');})
+
+//            $('div#a').append(newDiv);
+//            $(newDiv).insertAfter($('div#b'))
+            $(document.body).click(function () {
+                if ($("span#sb").is(":hidden")) {
+                    $("span#sb").slideDown("slow");
+                } else {
+                    $("span#sb").hide();
+                }
+            });
+
+            $('div#list').hover(function () {
+                $('ul').slideDown(300);
+
+            })
+            $('div#list').mouseleave(function () {
+                $('ul').slideUp(300);
+
+            })
+
+
+        })
+
+
+
+
+    </script>
+</head>
+<body>
+
+<div id="a">
+<span>aaaaaaaaaa</span>
+</div>
+
+
+
+
+<div>
+
+    <div id="list"><hr>
+        <p>Menu</p>
+    <ul>
+
+        <li>111111</li>
+        <li>222222</li>
+        <li>333333</li>
+    </ul>
+    </div>
+</div>
+<hr>
+
+<div id="b">sdcasdcas
+    <span id="sb">bbbbbbb</span>
+</div>
+
+</body>
+</html>

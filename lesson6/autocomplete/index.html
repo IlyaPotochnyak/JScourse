@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Autocomplete</title>
+    <style>
+        #hint {
+            display: none;
+            position: relative;
+            z-index: 100;
+            width: 200px;
+            border: 1px blue solid;
+            border-radius: 5px;
+            padding: 2px;
+        }
+        #hint :nth-child(even) {
+            background-color: #ccc;
+        }
+
+        #hint div:hover {
+            background-color: #ccccff;
+        }
+    </style>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            function ajaxRequest() {
+                
+            }
+            //autocomplete ajax
+            $('#fillname').keyup(function () {
+                
+                $('#hint').attr('style', 'display: block');
+                $('#hint').prepend('<div>1111</div>');
+                console.log($('#fillname').val());
+            })
+            $('#fillname').click(function () {
+                $('#hint').attr('style', 'display: block');
+                $('#hint').prepend('<div>1111</div>');
+                console.log($('#fillname').val());
+            })
+
+            $('#fillname').change(function () {
+                $('#hint').attr('style', 'display: none');
+//                $('#hint').prepend('<div>1111</div>');
+            })
+        })
+    </script>
+
+</head>
+<body>
+
+<input type="text" id="fillname">
+
+<div id="hint">
+    <div>dsdd</div>
+    <div>dsdd</div>
+    <div>dsdd</div>
+    <div>dsdd</div>
+</div>
+
+
+</body>
+</html>
