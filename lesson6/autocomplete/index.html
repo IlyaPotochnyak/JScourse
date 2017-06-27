@@ -12,6 +12,7 @@
             border: 1px blue solid;
             border-radius: 5px;
             padding: 2px;
+            cursor: default;
         }
         #hint :nth-child(even) {
             background-color: #ccc;
@@ -25,25 +26,46 @@
     <script>
         $(document).ready(function () {
             
-            function ajaxRequest() {
-                
+            function ajaxRequest(req) {
+                var req = $('#fillname').val();
+                $.post('search.php', {req: req}, serverResp, 'json');
+            }
+            function serverResp(resp) {
+                $('#hint').html('');
+
+                for (var i = 0; i < resp.length; i++){
+//                    console.log(resp[i].name);
+                    $('#hint').append('<div class="item" id="hint'+i+'">'+resp[i].name+'</div>');
+
+                }
+
+//                $('#hint').html('<div>'+resp+'</div>');
+//                console.log($('#hint').val());
+            }
+            function autoMenu() {
+                var req = $('#fillname').val()
+                $('#hint').attr('style', 'display: block');
+
+//                console.log(req);
             }
             //autocomplete ajax
             $('#fillname').keyup(function () {
-                
-                $('#hint').attr('style', 'display: block');
-                $('#hint').prepend('<div>1111</div>');
-                console.log($('#fillname').val());
+                ajaxRequest();
+                autoMenu();
+
             })
             $('#fillname').click(function () {
-                $('#hint').attr('style', 'display: block');
-                $('#hint').prepend('<div>1111</div>');
-                console.log($('#fillname').val());
+                ajaxRequest();
+                autoMenu()
             })
 
             $('#fillname').change(function () {
                 $('#hint').attr('style', 'display: none');
 //                $('#hint').prepend('<div>1111</div>');
+            })
+
+            $('#hint div').click(function () {
+                console.log($('#hint').val());
             })
         })
     </script>
@@ -54,10 +76,10 @@
 <input type="text" id="fillname">
 
 <div id="hint">
-    <div>dsdd</div>
-    <div>dsdd</div>
-    <div>dsdd</div>
-    <div>dsdd</div>
+    <!--<div>dsdd</div>-->
+    <!--<div>dsdd</div>-->
+    <!--<div>dsdd</div>-->
+    <!--<div>dsdd</div>-->
 </div>
 
 

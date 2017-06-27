@@ -22,7 +22,7 @@ for ($i = $maxId; $i < count($strings); $i++) {
 //    var_dump($arr);
     $messages[] = $arr;
 }
-
+//var_dump($messages);
 
 header('Content-Type: application/json');
 echo json_encode($messages);

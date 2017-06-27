@@ -19,7 +19,7 @@ $(document).ready(function () {
         }
         $.post('add.php', {name: name, text: text}, function () {
             $('#text').attr('value', '');
-            console.log($('#text').attr('value', ''));
+            // console.log($('#text').attr('value', ''));
         })
     })
 })
