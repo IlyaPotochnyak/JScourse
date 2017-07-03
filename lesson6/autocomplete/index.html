@@ -45,6 +45,9 @@
             function autoMenu() {
                 var req = $('#fillname').val()
                 $('#hint').attr('style', 'display: block');
+                $('.item').click(function () {
+                    console.log('111');
+                })
 
 //                console.log(req);
             }
@@ -64,9 +67,12 @@
 //                $('#hint').prepend('<div>1111</div>');
             })
 
-            $('#hint div').click(function () {
-                console.log($('#hint').val());
-            })
+//            $('div#hint').mouseenter(function () {
+//
+////                var item = this.innerHTML;
+//
+//                console.log('eeeeee');
+//            })
         })
     </script>
 
